@@ -30,6 +30,7 @@
 	<context:component-scan base-package="com.zkn.learnspringmvc.controller"/>
 	<!-- DefaultAnnotationHandlerMapping从3.1之后被标注为过期,3.1之后用 RequestMappingHandlerMapping  -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
 	<!-- 视图解析器 常用的还有 VelocityViewResolver、FreeMarkerViewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

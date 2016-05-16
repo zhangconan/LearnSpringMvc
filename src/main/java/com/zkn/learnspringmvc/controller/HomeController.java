@@ -3,6 +3,7 @@ package com.zkn.learnspringmvc.controller;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,13 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	@RequestMapping(value="/home.do")
-	public String processHomeController(Map<String,Object> modelMap){
+	public String home(Model modelMap){
 		/**
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "Õâ¸öÊÇÊ×Ò³!!!");
+		mv.addObject("message", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³!!!");
 		mv.setViewName("home");
 		*/
-		modelMap.put("message", "Õâ¸öÊÇÊ×Ò³!!!");
+		modelMap.addAttribute("message", "è¿™ä¸ªæ˜¯é¦–é¡µ!!!");
+		modelMap.addAttribute("errorMessage", "è¿™ä¸ªæ˜¯é¦–é¡µ!!!");
 		return "home";
 	}
 }
