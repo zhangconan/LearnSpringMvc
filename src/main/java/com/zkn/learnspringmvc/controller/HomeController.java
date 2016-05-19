@@ -15,16 +15,24 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HomeController {
-
-	@RequestMapping(value="/home.do")
+	/**
+	 * 注解第一种写法
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping(value="/home1.do")
 	public String home(Model modelMap){
-		/**
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "�������ҳ!!!");
-		mv.setViewName("home");
-		*/
 		modelMap.addAttribute("message", "这个是首页!!!");
 		modelMap.addAttribute("errorMessage", "这个是首页!!!");
 		return "home";
 	}
+	@RequestMapping(value="/home2.do")
+	public ModelAndView home(){
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("message", "这是第二个首页");
+		mv.addObject("errorMessage", "这是第二个首页错误页面");
+		mv.setViewName("home");
+		return mv;
+	}
+	
 }
