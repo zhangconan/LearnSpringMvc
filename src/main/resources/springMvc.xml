@@ -30,10 +30,16 @@
 	<context:component-scan base-package="com.zkn.learnspringmvc.controller"/>
 	<!-- DefaultAnnotationHandlerMapping从3.1之后被标注为过期,3.1之后用 RequestMappingHandlerMapping  -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
-	
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	<!-- 请求处理映射器  beanName映射器  将Controller包装为HandlerExecutionChain-->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<!-- 调用Controller中的处理器方法  -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	<bean name="/beanName" class="com.zkn.learnspringmvc.controller.BeanNameController"></bean>
+	
 	<!-- 视图解析器 常用的还有 VelocityViewResolver、FreeMarkerViewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 		<property name="prefix" value="/WEB-INF/jsp/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
