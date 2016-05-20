@@ -12,7 +12,7 @@ public class BeanNameController extends AbstractController{
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "这是第二个首页");
+		mv.addObject("message", "这是BeanNameController");
 		mv.addObject("errorMessage", "这是第二个首页错误页面");
 		mv.setViewName("home");
 		return mv;

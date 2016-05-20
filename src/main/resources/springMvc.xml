@@ -31,11 +31,27 @@
 	<!-- DefaultAnnotationHandlerMapping从3.1之后被标注为过期,3.1之后用 RequestMappingHandlerMapping  -->
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	
 	<!-- 请求处理映射器  beanName映射器  将Controller包装为HandlerExecutionChain-->
 	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
 	<!-- 调用Controller中的处理器方法  -->
 	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-	<bean name="/beanName" class="com.zkn.learnspringmvc.controller.BeanNameController"></bean>
+	<bean name="/beanUrlName" class="com.zkn.learnspringmvc.controller.BeanNameURLController"></bean>
+	<!-- 
+		类名称控制器  注意访问的时候是 /classname 全部是小写的。Controller不用写。
+		和bean的名字没关系，只和类的名字有关系。
+	 -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+	<bean name="className" class="com.zkn.learnspringmvc.controller.ClassNameController"/>
+	<!-- 
+		bean名字控制器  和bean的名字有关系和类的名字没有关系   可以和ControllerClassNameHandlerMapping 相互对比记忆
+	 -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
+	<bean name="beanName" class="com.zkn.learnspringmvc.controller.BeanNameController"/>
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"/>
+	
+	<!-- 加载静态资源 -->
+	<mvc:resources location="/static/" mapping="/static/**"/>
 	
 	<!-- 视图解析器 常用的还有 VelocityViewResolver、FreeMarkerViewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
