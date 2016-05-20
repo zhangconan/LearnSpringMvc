@@ -48,7 +48,10 @@
 	 -->
 	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping"/>
 	<bean name="beanName" class="com.zkn.learnspringmvc.controller.BeanNameController"/>
-	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"/>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+	</bean>
 	
 	<!-- 加载静态资源 -->
 	<mvc:resources location="/static/" mapping="/static/**"/>
