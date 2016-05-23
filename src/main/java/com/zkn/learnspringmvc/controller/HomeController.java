@@ -26,6 +26,11 @@ public class HomeController {
 		modelMap.addAttribute("errorMessage", "这个是首页!!!");
 		return "home";
 	}
+	/**
+	 * 注解第二种写法
+	 * @param modelMap
+	 * @return
+	 */
 	@RequestMapping(value="/home2.do")
 	public ModelAndView home(){
 		ModelAndView mv = new ModelAndView();
@@ -34,5 +39,15 @@ public class HomeController {
 		mv.setViewName("home");
 		return mv;
 	}
-	
+	/**
+	 * 注解第三种写法
+	 * @param modelMap
+	 * @return
+	 */
+	@RequestMapping(value="/home3.do")
+	public String home2(Map<String, Object> map){
+		map.put("message", "这是home3.do");
+		map.put("errorMessage", "home3.do");
+		return "home";
+	}
 }
