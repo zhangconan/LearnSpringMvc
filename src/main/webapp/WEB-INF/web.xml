@@ -19,7 +19,7 @@
 		<!-- 更改SpringMVC配置文件的名字 默认的是spring-mvc-servlet.xml -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:springMvc.xml</param-value>
+			<param-value>classpath:learn-spring-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

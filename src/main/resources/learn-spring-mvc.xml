@@ -11,14 +11,19 @@
 			http://www.springframework.org/schema/context/spring-context-3.2.xsd ">
 
 	<!-- 自动扫描 -->
-	<context:component-scan base-package="com.zkn.learnspringmvc.controller"/>
-	
+	<context:component-scan base-package="com.zkn.learnspringmvc.news.controller"/>
+	<!-- SpringMVC注解驱动 -->
+	<mvc:annotation-driven />
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
 	
 	<!-- 资源管理 -->
 	<mvc:resources location="/resources/" mapping="/resources/**"/>
 	<mvc:resources location="/upload/" mapping="/upload/**"/>
+	<!-- DefaultAnnotationHandlerMapping从3.1之后被标注为过期,3.1之后用 RequestMappingHandlerMapping -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	<!-- AnnotationMethodHandlerAdapter从3.1之后被标注为国企    -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
 	
 	<!-- 内部资源视图解析器  prefix + logicName + suffix /WEB-INF/jsps/ + index + .jsp-->
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
