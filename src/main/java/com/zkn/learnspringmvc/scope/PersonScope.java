@@ -1,6 +1,7 @@
 package com.zkn.learnspringmvc.scope;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Person对象
@@ -28,6 +29,10 @@ public class PersonScope implements Serializable{
 	private String address;
 
 	private StudentScope studentScope;
+	/**
+	 * 出生日期
+	 */
+	private Date birthDay;
 
 	public String getName() {
 		return name;
@@ -60,6 +65,14 @@ public class PersonScope implements Serializable{
 
 	public String getAddress() {
 		return address;
+	}
+
+	public Date getBirthDay() {
+		return birthDay;
+	}
+
+	public void setBirthDay(Date birthDay) {
+		this.birthDay = birthDay;
 	}
 
 	public void setAddress(String address) {
