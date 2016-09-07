@@ -11,7 +11,11 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	<!-- 配置SpringMVC Servlet -->
+    <context-param>
+        <param-name/>
+        <param-value/>
+    </context-param>
+    <!-- 配置SpringMVC Servlet -->
 	<servlet>
 		<servlet-name>spring-mvc</servlet-name>
 		<!-- SpringMVC 分发器 -->

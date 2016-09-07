@@ -18,5 +18,25 @@
                         http://www.springframework.org/schema/context/spring-context-3.2.xsd"
 	 -->
 	<context:component-scan base-package="com.zkn.learnspringmvc.service"/>
+	<context:component-scan base-package="com.zkn.learnspringmvc.dao" />
+
+	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/zkn?useUnicode=true&amp;characterEncoding=UTF-8"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="398701344"></property>
+		<property name="minIdle" value="0" ></property>
+		<property name="maxWait" value="-1"></property>
+	</bean>
+	<!-- Spring管理数据源 -->
+	<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+	<!-- 配置MyBatis -->
+	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:sqlmap-config.xml"></property>
+	</bean>
 </beans>
 	
