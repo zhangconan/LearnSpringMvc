@@ -10,7 +10,7 @@ public class UserScope implements Serializable{
     /**
      * 姓名
      */
-    private String name;
+    private String userName;
     /**
      * 主键ID
      */
@@ -24,12 +24,12 @@ public class UserScope implements Serializable{
      */
     private String address;
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public Integer getId() {
