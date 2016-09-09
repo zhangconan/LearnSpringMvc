@@ -15,7 +15,7 @@
         <set>
           <if test="userName != null">user_name = #{userName} </if>
           <if test="passWord != null">pass_word = #{passWord} </if>
-          <if test="pass_word != null">pass_word = #{pass_word} </if>
+          <if test="address != null">address = #{address} </if>
         </set>
         where id = #{id}
     </update>

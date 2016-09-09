@@ -24,7 +24,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/zkn?useUnicode=true&amp;characterEncoding=UTF-8"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="398701344"></property>
+		<property name="password" value="11111111"></property>
 		<property name="minIdle" value="0" ></property>
 		<property name="maxWait" value="-1"></property>
 	</bean>
