@@ -30,7 +30,7 @@ public class AddUserInfoController {
         return "保存成功!!!!";
     }
 
-    @RequestMapping("/updateUserInfo/{id}")
+    @RequestMapping("/updateUserInfo.do")
     @ResponseBody
     public String updateUserInfo(HttpServletRequest request,Integer id){
         UserScope userScope = new UserScope();
