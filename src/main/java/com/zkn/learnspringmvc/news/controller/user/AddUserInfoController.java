@@ -46,4 +46,5 @@ public class AddUserInfoController {
         userService.deleteUser(id);
         return "更新成功了!!!";
     }
+
 }
