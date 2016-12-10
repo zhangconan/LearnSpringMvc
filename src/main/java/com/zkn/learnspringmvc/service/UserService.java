@@ -2,6 +2,8 @@ package com.zkn.learnspringmvc.service;
 
 import com.zkn.learnspringmvc.domain.UserScope;
 
+import java.util.List;
+
 /**
  * zkn
  */
@@ -24,4 +26,8 @@ public interface UserService {
      * @param  id
      */
     void deleteUser(Integer id);
+
+    void addUserBatch(List<UserScope> list);
+
+    int addUserSelectKey(UserScope userScope);
 }

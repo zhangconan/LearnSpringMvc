@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by zkn on 2016/9/7.
  */
@@ -36,4 +38,16 @@ public class UserServiceImpl implements UserService{
     public void deleteUser(Integer id) {
         userDao.deleteUser(id);
     }
+
+    @Override
+    public void addUserBatch(List<UserScope> list) {
+        userDao.addUserBatch(list);
+    }
+
+    @Override
+    public int addUserSelectKey(UserScope userScope) {
+
+        return userDao.addUserSelectKey(userScope);
+    }
+
 }
