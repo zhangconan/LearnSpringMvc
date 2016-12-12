@@ -5,6 +5,9 @@ import com.zkn.learnspringmvc.dao.UserDAO;
 import com.zkn.learnspringmvc.domain.UserScope;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by zkn on 2016/9/7.
  */
@@ -27,4 +30,18 @@ public class UserDAOImpl extends AbstractDao implements UserDAO {
         this.getSqlSession().update("userMapper.deleteUser",id);
     }
 
+    @Override
+    public void addUserBatch(List<UserScope> list) {
+
+        this.getSqlSession().insert("userMapper.addUserBatch",list);
+        System.out.println(Arrays.toString(list.toArray()));
+    }
+
+    @Override
+    public int addUserSelectKey(UserScope userScope){
+
+        this.getSqlSession().insert("userMapper.insertSelectKey",userScope);
+        System.out.println(userScope);
+        return userScope.getId();
+    }
 }

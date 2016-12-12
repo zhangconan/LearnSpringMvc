@@ -55,4 +55,14 @@ public class UserScope implements Serializable{
     public void setAddress(String address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "UserScope{" +
+                "userName='" + userName + '\'' +
+                ", id=" + id +
+                ", passWord='" + passWord + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
