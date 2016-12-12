@@ -40,6 +40,6 @@
 		<property name="configLocation" value="classpath:sqlmap-config.xml"></property>
 	</bean>
 	
-	<import resource="classpath:com/zkn/learnspringmvc/service/dubbo-provider.xml"/>
+	<!--<import resource="classpath:com/zkn/learnspringmvc/service/dubbo-provider.xml"/> -->
 </beans>
 	
