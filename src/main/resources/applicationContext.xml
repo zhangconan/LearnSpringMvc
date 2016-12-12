@@ -32,7 +32,6 @@
 	</bean>
 	
 	<!--<import resource="classpath:com/zkn/learnspringmvc/service/dubbo-provider.xml"/> -->
-	<!--<import resource="classpath:com/zkn/learnspringmvc/service/dubbo-provider.xml"/> -->
 	<import resource="classpath:datasource/mysql-datasource.xml" />
 </beans>
 	
