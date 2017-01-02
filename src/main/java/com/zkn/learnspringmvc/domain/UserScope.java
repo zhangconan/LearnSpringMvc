@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class UserScope implements Serializable{
 
+    private static final long serialVersionUID = -2910288813933923034L;
     /**
      * 姓名
      */
@@ -23,6 +24,18 @@ public class UserScope implements Serializable{
      * 地址
      */
     private String address;
+    /**
+     * 类别
+     */
+    private String category;
+    /**
+     * 年龄
+     */
+    private Integer age;
+    /**
+     * 编程语言
+     */
+    private String programLanguage;
 
     public String getUserName() {
         return userName;
@@ -54,6 +67,41 @@ public class UserScope implements Serializable{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public UserScope() {
+    }
+
+    public String getProgramLanguage() {
+        return programLanguage;
+    }
+
+    public void setProgramLanguage(String programLanguage) {
+        this.programLanguage = programLanguage;
+    }
+
+    public UserScope(String userName, String address, String category, Integer age, String programLanguage) {
+        this.userName = userName;
+        this.address = address;
+        this.category = category;
+        this.age = age;
+        this.programLanguage = programLanguage;
     }
 
     @Override
