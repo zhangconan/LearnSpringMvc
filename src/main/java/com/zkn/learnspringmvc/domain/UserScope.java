@@ -1,6 +1,7 @@
 package com.zkn.learnspringmvc.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by zkn on 2016/9/7.
@@ -15,7 +16,7 @@ public class UserScope implements Serializable{
     /**
      * 主键ID
      */
-    private Integer id;
+    private Long id;
     /**
      * 密码
      */
@@ -36,6 +37,10 @@ public class UserScope implements Serializable{
      * 编程语言
      */
     private String programLanguage;
+    /**
+     * 创建时间
+     */
+    private Date createDate;
 
     public String getUserName() {
         return userName;
@@ -45,11 +50,11 @@ public class UserScope implements Serializable{
         this.userName = userName;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -83,6 +88,14 @@ public class UserScope implements Serializable{
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     public UserScope() {

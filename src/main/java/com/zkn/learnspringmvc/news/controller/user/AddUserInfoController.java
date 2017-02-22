@@ -34,7 +34,7 @@ public class AddUserInfoController {
 
     @RequestMapping("/updateUserInfo.do")
     @ResponseBody
-    public String updateUserInfo(HttpServletRequest request,Integer id){
+    public String updateUserInfo(HttpServletRequest request,Long id){
         UserScope userScope = new UserScope();
         userScope.setUserName(request.getParameter("user_name"));
         userScope.setId(id);

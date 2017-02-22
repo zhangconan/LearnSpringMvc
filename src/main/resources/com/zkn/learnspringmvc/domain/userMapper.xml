@@ -2,12 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userMapper">
 
+    <resultMap id="insertMap" type="java.util.Map">
+        <result column="id" jdbcType="INTEGER" javaType="int" property="id" />
+        <result column="create_date" jdbcType="DATE" javaType="java.util.Date" property="create_date" />
+    </resultMap>
+
     <select id="getId" parameterType="int" resultType="userScope">
         select * from user where id = #{id}
     </select>
 
     <insert id="addUser" parameterType="userScope" useGeneratedKeys="true" keyProperty="id">
-        insert user(user_name,pass_word,address) values (#{userName},#{passWord},#{address})
+        insert user(user_name,pass_word,address,create_date) values (#{userName},#{passWord},#{address},now())
     </insert>
     <insert id="addUserBatch" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
       insert user(user_name,pass_word,address) values
@@ -16,10 +21,10 @@
       </foreach>
     </insert>
     <insert id="insertSelectKey" parameterType="userScope">
-        <selectKey keyProperty="id" resultType="int">
-            select LAST_INSERT_ID()
+        <selectKey keyProperty="id,createDate" resultType="java.util.Map" keyColumn="id,create_date">
+            select LAST_INSERT_ID() as id,now() as create_date
         </selectKey>
-        insert user(user_name,pass_word,address) values (#{userName},#{passWord},#{address})
+        insert user(user_name,pass_word,address,create_date) values (#{userName},#{passWord},#{address},#{createDate})
     </insert>
     <update id="updateUser" parameterType="userScope">
         update user
