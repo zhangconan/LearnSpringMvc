@@ -40,8 +40,10 @@ public class UserDAOImpl extends AbstractDao implements UserDAO {
     @Override
     public int addUserSelectKey(UserScope userScope){
 
+        UserScope userScope1 = this.getSqlSession().selectOne("userMapper.getId",20);
+
         this.getSqlSession().insert("userMapper.insertSelectKey",userScope);
         System.out.println(userScope);
-        return userScope.getId();
+        return userScope.getId().intValue();
     }
 }
