@@ -50,7 +50,7 @@
     <mvc:resources location="/resources/" mapping="/resources/**"/>
     <mvc:resources location="/upload/" mapping="/upload/**"/>
 
-
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
     <!-- 内部资源视图解析器  prefix + logicName + suffix /WEB-INF/jsps/ + index + .jsp-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 前缀 -->
