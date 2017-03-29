@@ -15,6 +15,8 @@
 路径：${pageContext.request.contextPath}
     <form method="post" name="upload" action="/file/uploadFileAction.do" enctype="multipart/form-data">
         上传文件：<input type="file" name="uploadFile" value="浏览"/> <input type="button" value="上传" onclick="doSubmitFile()"/>
+        姓名：<input type="text" name="userName"/><br/>
+        密码：<input type="text" name="passWord"/><br/>
     </form>
 <script type="text/javascript">
     function doSubmitFile() {

@@ -13,6 +13,7 @@
 </head>
 <body>
 <input type="button" value="测试jsonp请求" onclick="testJsonp()" />
+<input type="button" value="测试JSON数据" onclick="testJSON()" />
 <script type="text/javascript">
     function testJsonp() {
         $.ajax({
@@ -25,6 +26,19 @@
             },
             error:function (err) {
                 alert('出现错误了!!!');
+            }
+        });
+    }
+    
+    function testJSON() {
+        $.ajax({
+            type: "POST",
+            url: "/testJson",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify({"name":"张三"}),
+            success: function (jsonResult) {
+                alert(jsonResult);
             }
         });
     }
