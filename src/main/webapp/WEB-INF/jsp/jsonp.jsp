@@ -36,7 +36,7 @@
             url: "/testJson",
             contentType: "application/json",
             dataType: "json",
-            data: JSON.stringify({"name":"张三"}),
+            data: JSON.stringify({"name":"张三","password":"lisisisi"}),
             success: function (jsonResult) {
                 alert(jsonResult);
             }

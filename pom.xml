@@ -10,7 +10,7 @@
     <properties>
         <java.version>1.8</java.version>
         <java.encoding>UTF-8</java.encoding>
-        <spring-version>4.2.3.RELEASE</spring-version>
+        <spring-version>4.3.2.RELEASE</spring-version>
         <jetty-version>8.1.13.v20130916</jetty-version>
         <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
         <productionMode>false</productionMode>
